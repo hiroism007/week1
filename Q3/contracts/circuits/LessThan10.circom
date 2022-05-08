@@ -13,3 +13,14 @@ template LessThan10() {
 
     out <== lt.out;
 }
+
+template Main() {
+    signal input in;
+    signal output out;
+
+    component lessThan = LessThan10();
+    lessThan.in <== in;
+    out <== lessThan.out;
+}
+
+component main = Main();
